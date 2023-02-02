@@ -1,41 +1,122 @@
-.login_page{
-    position: relative;
-    height: 100%;
-    background-image: url("https://assets.nflxext.com/ffe/siteui/vlv3/7cee2527-d2cc-4cc9-99f6-d1375e72d46e/eb83fa55-ab10-476a-b103-499eb7c6e022/IN-en-20230103-popsignuptwoweeks-perspective_alpha_website_large.jpg");
-background-repeat: no-repeat;
-background-position: center;
-background-size: cover;
+.login_page {
+  position: relative;
+  height: 100%;
+  background-image: url("https://assets.nflxext.com/ffe/siteui/vlv3/7cee2527-d2cc-4cc9-99f6-d1375e72d46e/eb83fa55-ab10-476a-b103-499eb7c6e022/IN-en-20230103-popsignuptwoweeks-perspective_alpha_website_large.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
-.Login_logo{
-    position: fixed;
-    left: 0;
-    width: 150px;
-    padding-left: 20px;
-    object-fit: contain;
+.Login_logo {
+  position: fixed;
+  left: 0;
+  width: 150px;
+  padding-left: 20px;
+  object-fit: contain;
 }
-.signIn_button{
-    position: fixed;
-    right: 20px;
-    top: 20px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    color: white;
-    background-color: #e50914;
-    border: none;
-    cursor: pointer;
-    font-weight: 600;
-    border-radius: 0.2vw;
+.signIn_button {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: white;
+  background-color: #e50914;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 0.2vw;
+}
+.Login_gradient {
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0,
+    rgba(0, 0, 0, 0) 60%,
+    rgba(0, 0, 0.8) 100%
+  );
+}
 
+.login_body {
+  z-index: 1;
+  color: white;
+  padding: 20px;
+  position: absolute;
+  top: 20%;
+  text-align: center;
+  left: 0;
+  right: 0;
 }
-.Login_gradient{
-    width: 100%;
-    height: 100vh;
-    background: rgba(0,0,0,0.4);
-    background-image: linear-gradient(
-        to top,
-        rgba(0,0,0,0.8)0,
-        rgba(0,0,0,0)60%,
-        rgba(0,0,0.8)100%
-        
-    );
+
+.login_body > h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+.login_body > h2 {
+  font-size: 2rem;
+}
+.login_input {
+  margin: 20px;
+}
+
+.login_input input {
+  padding: 10px;
+  outline-width: 0;
+  height: 30px;
+  width: 30%;
+  border: none;
+  max-width: 600px;
+border-top-left-radius: 5px;
+border-bottom-left-radius: 5px;
+}
+
+.getstarted_button {
+  padding: 16px 20px;
+  font-size: 1rem;
+  border: none;
+  background-color: #e50914;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  
+}
+.signup_form {
+  max-width: 300px;
+  padding: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(0, 0, 0, 0.85);
+}
+.signup_form > form {
+  display: grid;
+  flex-direction: column;
+}
+
+.signup_form > form > input {
+  padding: 10px;
+  outline-width: 0;
+  height: 40px;
+  margin-top: 14px;
+  
+  padding: 5px 15px;
+  border: none;
+  border-radius: 5px;
+}
+.signup_form > form > button {
+  padding: 16px 20px;
+  outline-width: 0;
+
+  margin-bottom: 14px;
+
+  border: none;
+  font-size: 1rem;
+  border-radius: 5px;
+  background-color: #e50914;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 30px;
 }
