@@ -11,7 +11,6 @@ const register=(e)=>{
 e.preventDefault()
 
 
-
 }
 
 const signin=(e)=>{

@@ -1,14 +1,15 @@
 import React from "react";
 import "./slide.css";
 import { useEffect, useState } from "react";
-
 import axios from "../functions/axios";
-
+import { useNavigate } from "react-router-dom";
 const image_base_url = `https://image.tmdb.org/t/p/original/`;
+
 
 const Slide = ({ title, fetchUrl, isLarge = false }) => {
   const [Movies, setmovie] = useState([]);
   const [loading,setLoading]=useState(true)
+  const navigateTo=useNavigate()
   const fetchData = async () => {
     setLoading(true)
     let request = await axios.get(fetchUrl);
@@ -18,6 +19,10 @@ const Slide = ({ title, fetchUrl, isLarge = false }) => {
     return request;
 
   };
+
+  const clickedOnPoster=(movie)=>{
+    navigateTo(`/trailer/${movie.name}`)
+  }
 
   useEffect(() => {
     fetchData();
@@ -54,7 +59,7 @@ if(loading){
             (movie) =>
               (isLarge && movie.poster_path ||
                 !isLarge && movie.backdrop_path ) && (
-                <img
+                <img onClick={()=>clickedOnPoster(movie)}
                   className={`poster ${isLarge && "largePoster"}`}
                   key={movie.id}
                   src={`${image_base_url}${
@@ -62,6 +67,7 @@ if(loading){
                   }`}
                   alt=""
                 />
+                
               )
           )}
       </div>

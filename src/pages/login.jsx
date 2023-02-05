@@ -4,8 +4,6 @@ import { useState } from 'react';
 import Signupform from '../components/signupform';
 const Login = () => {
 const [signin, setsignin] = useState(false);
-
-
     return (
         <div className='login_page'>
             <div className="login_background">
