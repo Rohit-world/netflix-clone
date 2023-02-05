@@ -47,7 +47,8 @@ export default function HomeScreen() {
         fetchUrl={requests.fetchRomanceMovies}
         
       />
-      <Slide
+      <Slide 
+      
         title="DOCUMENTARIES"
         fetchUrl={requests.fetchDocumentaries}
        

@@ -22,8 +22,8 @@ e.preventDefault()
         <div className='signup_form'>
             <form action="">
                 <h1>Sign In</h1>
-                <input type="email" placeholder='Email' />
-                <input type="password"  placeholder='Password'/>
+                <input name='email' type="email" placeholder='Email' />
+                <input name='password' type="password"  placeholder='Password'/>
                 <button type="submit" onClick={signin}>Sign In</button>
                 <h4><span className='signup_gray'>New to Netflix? </span> <span className='signup_link' onClick={register}>Sign Up now</span> </h4>
 

@@ -2,12 +2,13 @@ import React from 'react';
 import "./login.css"
 import { useState } from 'react';
 import Signupform from '../components/signupform';
+import { Link } from 'react-router-dom';
 const Login = () => {
 const [signin, setsignin] = useState(false);
     return (
         <div className='login_page'>
             <div className="login_background">
-                <img className='Login_logo' src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png" alt="" />
+               <Link to="/" > <img className='Login_logo' src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png" alt="" /></Link>
 
 
                 <button onClick={()=>setsignin(true)} className='signIn_button'>Sign In</button>
