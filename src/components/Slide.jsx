@@ -21,7 +21,7 @@ const Slide = ({ title, fetchUrl, isLarge = false }) => {
   };
 
   const clickedOnPoster=(movie)=>{
-    navigateTo(`/trailer/${movie.name}`)
+    navigateTo(`/trailer/${movie}`)
   }
 
   useEffect(() => {
@@ -59,7 +59,7 @@ if(loading){
             (movie) =>
               (isLarge && movie.poster_path ||
                 !isLarge && movie.backdrop_path ) && (
-                <img onClick={()=>clickedOnPoster(movie)}
+                <img onClick={()=>clickedOnPoster(movie.name||movie.title)}
                   className={`poster ${isLarge && "largePoster"}`}
                   key={movie.id}
                   src={`${image_base_url}${

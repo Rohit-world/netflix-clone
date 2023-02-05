@@ -2,6 +2,7 @@ import axios from "../functions/axios";
 import "./banner.css";
 import requests from "../functions/request";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -9,7 +10,7 @@ import React from "react";
 const Banner = () => {
 
 const [movie,setmovie]=React.useState([])
-
+const navigateTO=useNavigate()
     function sliceDes(str,n){
         return str?.length>n?str.substr(0,n-1)+"....":str
 
@@ -41,7 +42,7 @@ fetchData()
       <div className="banner_contents">
         <h1 className="banner_title">{movie?.title ||movie?.original_name}</h1>
         <div className="banner_button">
-            <button>Play</button>
+            <button onClick={()=>navigateTO(`/trailer/${movie.title||movie.original_name}`)}>Play</button>
             <button>Playlist</button>
         </div>
 

@@ -22,7 +22,7 @@ setvideoId(resvideoID)
 }
 
 useEffect(() => {
-  
+  fetchdata(query)
 }, [videoId]);
 
 return(
@@ -31,11 +31,14 @@ return(
 
 
 <div style={{height:"100vh",paddingTop:"2%",display:"flex" }}>
-      
-<div style={{margin:"auto",display:"flex"}}>
 
-<img width="200" src="https://i.ibb.co/mJ0mqDW/Rolling-1s-200px.gif" alt="Spinner-1-8s-243px" border="0" />
-</div>
+ {!videoId && <div style={{margin:"auto",display:"flex"}}>
+
+<img style={{}} width="200" src="https://i.ibb.co/tC8w3DY/Spinner-1-8s-243px.gif" alt="Spinner-1-8s-243px" border="0" />
+</div>}
+
+{videoId &&  <iframe style={{margin:"auto"}} width="90%" height="90%" allow='autoPlay'  src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1`} autoplay={1} 
+   allowFullScreen="true"    frameborder="0"></iframe>}
 
 
       </div>
