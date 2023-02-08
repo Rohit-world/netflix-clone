@@ -3,9 +3,11 @@ import "../pages/login.css"
 import { useRef } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { LoggedIn } from '../redux/action';
+import { useDispatch } from 'react-redux';
 
 const Signupform = () => {
-
+const dispatch=useDispatch()
 const [loading ,setloading]=useState(false)
 const navigate=useNavigate()  
 const emailref=useRef(null)
@@ -72,6 +74,7 @@ const signin=(e)=>{
         
            if(res.data.token){
             alert("Sign in successfull")
+            dispatch(LoggedIn(res.data.token))
             navigate("/")
            }else{
             alert(res.data.msg)
@@ -92,7 +95,7 @@ const signin=(e)=>{
                 <h1>Sign In</h1>
                 <input ref={emailref} name='email' type="email" placeholder='Email' />
                 <input ref={passwordref} name='password' type="password"  placeholder='Password'/>
-                <button type="submit" disabled={loading} className={loading && "loadingbutton"} onClick={signin}>Sign In</button>
+                <button type="submit" disabled={loading} className={loading?"loadingbutton":""} onClick={signin}>Sign In</button>
                 <h4><span className='signup_gray'>New to Netflix? </span> <span className='signup_link' onClick={register}>Sign Up now</span> </h4>
 
             </form>
