@@ -50,11 +50,14 @@
 }
 
 .login_body > h1 {
-  font-size: 3rem;
+  font-size: 4vw;
   margin-bottom: 20px;
 }
 .login_body > h2 {
-  font-size: 2rem;
+  font-size: 3vw;
+}
+.login_body > p {
+  font-size: 2vw;
 }
 .login_input {
   margin: 20px;

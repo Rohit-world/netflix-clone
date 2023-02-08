@@ -2,8 +2,13 @@
 import "./navbar.css"
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { LoggedOut } from "../redux/action";
 export default function Navbar(){
-    const [visible,setvisible]=useState(false);
+
+
+const dispatch=useDispatch()
+const [visible,setvisible]=useState(false);
 
 const NavbarAnimation=()=>{
     if(window.scrollY>100){
@@ -31,8 +36,10 @@ return()=>window.removeEventListener("scroll",NavbarAnimation)
 
 
 
-
-<Link to="/login"><img className="nav_avatar" src="https://i.pinimg.com/736x/db/70/dc/db70dc468af8c93749d1f587d74dcb08.jpg" alt="" /></Link>
+<img onClick={()=>{
+    alert("User Logged Out")
+    window.location.reload()
+}} className="nav_avatar" src="https://i.ibb.co/86Zb4Bw/logout.png" alt="" />
 
             </div>
            

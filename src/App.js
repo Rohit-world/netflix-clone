@@ -6,9 +6,7 @@ import { useSelector } from 'react-redux';
 
 
 function App() {
- const token=useSelector((state)=>state.token)
- console.log(token)
-
+ 
   return (
     <div className="App">
    

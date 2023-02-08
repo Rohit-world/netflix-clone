@@ -73,7 +73,6 @@ const signin=(e)=>{
        setloading(false)
         
            if(res.data.token){
-            alert("Sign in successfull")
             dispatch(LoggedIn(res.data.token))
             navigate("/")
            }else{
