@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "../pages/login.css"
 import { useRef } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Signupform = () => {
+
+const [loading ,setloading]=useState(false)
+const navigate=useNavigate()  
 const emailref=useRef(null)
 const passwordref=useRef(null)
 
@@ -29,18 +33,20 @@ e.preventDefault()
 const email=emailref.current.value
 const password=passwordref.current.value
 if(validationCheck()){
-
+setloading(true)
 axios.post("https://eager-red-rattlesnake.cyclic.app/signup",{
     email,password
 }).then((res)=>{
-    console.log(res)
+    setloading(false)
     if(res.data.msg=="User created successfull"){
         alert("Signup successfull")
+        
     }else{
         alert(res.data.msg)
     }
 }).catch((err)=>{
     if(err)alert("Something went Wrong Please Try Again")
+    setloading(false)
 })
 
 }
@@ -54,17 +60,39 @@ axios.post("https://eager-red-rattlesnake.cyclic.app/signup",{
 }
 
 const signin=(e)=>{
-e.preventDefault()
+    e.preventDefault()
+    const email=emailref.current.value
+    const password=passwordref.current.value
+    if(validationCheck()){
+    setloading(true)
+    axios.post("https://eager-red-rattlesnake.cyclic.app/login",{
+        email,password
+    }).then((res)=>{
+       setloading(false)
+        
+           if(res.data.token){
+            alert("Sign in successfull")
+            navigate("/")
+           }else{
+            alert(res.data.msg)
+           }
+        
+    }).catch((err)=>{
+        if(err)alert("Something went Wrong Please Try Again")
+        setloading(false)
+    })}
+
 }
 
 
     return (
         <div className='signup_form'>
+
             <form action="">
                 <h1>Sign In</h1>
                 <input ref={emailref} name='email' type="email" placeholder='Email' />
                 <input ref={passwordref} name='password' type="password"  placeholder='Password'/>
-                <button type="submit" onClick={signin}>Sign In</button>
+                <button type="submit" disabled={loading} className={loading && "loadingbutton"} onClick={signin}>Sign In</button>
                 <h4><span className='signup_gray'>New to Netflix? </span> <span className='signup_link' onClick={register}>Sign Up now</span> </h4>
 
             </form>
