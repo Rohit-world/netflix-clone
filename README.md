@@ -1,46 +1,48 @@
-# Getting Started with Create React App and Redux
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+# Netflix-Clone
 
-## Available Scripts
+### A full Stack Netflix Clone Build Using React JS and Node JS
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+ - Authentication 
+ - Private Routing
+ - Can get Trending Movie and Series on various Genres 
+ - User Can see the Trailer Of particular Content
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Landing Page
+### Here user need to SignIn or SignUp first to Access Homepage 
 
-### `npm test`
+<img src="https://i.ibb.co/tYKfX6D/Screenshot-20230210-162536.png" alt="Landing Page" border="0" />
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Form
+ ### Here user can signIn or signUp
+ - From backend user will get Proper response with message 
 
-### `npm run build`
+<img src="https://i.ibb.co/w4jSDXv/Screenshot-20230210-162603.png" alt="Login Form" border="0" />
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Homepage 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- You can Ask Doubt in the Chat by filling your name If anyone is online there, they can help you.
 
-### `npm run eject`
+<img src="https://i.ibb.co/dW9Xvm1/Screenshot-20230210-162624.png" alt="Homepage" border="0" />
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Trailer Page
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- on Clicking on Banner's Play Button or Any particular content You can watch the Trailer of that particular Content from Youtube
+<img src="https://i.ibb.co/DKNKsWs/Screenshot-20230210-162642.png" alt="Screenshot-20230210-162642" border="0" />
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+# TechStacks
+- React Js
+- Node JS
+- Mongo DB 
+- Express 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# API Used
+- The MovieDB for Netflix Data
+- Youtube API for Trailer
 
-To learn React, check out the [React documentation](https://reactjs.org/).
