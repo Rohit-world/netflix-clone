@@ -37,10 +37,12 @@
 
 
 # TechStacks
+- Redux
 - React Js
 - Node JS
 - Mongo DB 
 - Express 
+
 
 # API Used
 - The MovieDB for Netflix Data
