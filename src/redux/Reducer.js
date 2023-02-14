@@ -2,7 +2,7 @@ import { USER_Logged_In } from "./action";
 import { User_logged_out } from "./action";
 
 const intialState={
-    token:""
+    token:"sns"
 }
 const reducer=(state=intialState,action)=>{
 switch(action.type){
